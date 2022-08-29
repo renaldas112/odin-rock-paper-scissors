@@ -1,0 +1,24 @@
+/* only for custom styles */
+
+body {
+  background: url(images/background.jpg);
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Comic Sans";
+  src: url("fonts/Qdbettercomicsans-jEEeG.ttf") format("truetype");
+}
+
+.main__title, .main__subtext, .computer {
+  font-family: "Comic Sans";
+}
+
+article:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+.button {
+    background: url(images/scissors.png);
+}
