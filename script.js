@@ -22,6 +22,34 @@ const disableButtonAfterClicked = () => {
   }
 };
 
+/////////////////////////////////////////////////////
+// game rules
+
+let result = "";
+
+const gameRules = () => {
+  if (
+    (playerSelection === "Rock" && computerAnswer === "Paper") ||
+    (playerSelection === "Paper" && computerAnswer === "Scissors") ||
+    (playerSelection === "Scissors" && computerAnswer === "Rock")
+  ) {
+    result = "You lost";
+  } else if (
+    (playerSelection === "Rock" && computerAnswer === "Scissors") ||
+    (playerSelection === "Paper" && computerAnswer === "Rock") ||
+    (playerSelection === "Scissors" && computerAnswer === "Paper")
+  ) {
+    result = "You win";
+  } else {
+    result = "Tie";
+  }
+};
+
+const printAnswer = () => {
+  const verdict = document.querySelector(".verdict__container");
+  verdict.append(result);
+};
+
 //////////////////////////////////////////////////
 // player choice
 
@@ -55,37 +83,10 @@ const SCISSORS_BUTTON = (document.querySelector(".scissors").onclick =
     disableButtonAfterClicked();
   });
 
-/////////////////////////////////////////////////////
-// game rules
-
-let result = "";
-
-const gameRules = () => {
-  if (
-    (playerSelection === "Rock" && computerAnswer === "Paper") ||
-    (playerSelection === "Paper" && computerAnswer === "Scissors") ||
-    (playerSelection === "Scissors" && computerAnswer === "Rock")
-  ) {
-    result = "You lost";
-  } else if (
-    (playerSelection === "Rock" && computerAnswer === "Scissors") ||
-    (playerSelection === "Paper" && computerAnswer === "Rock") ||
-    (playerSelection === "Scissors" && computerAnswer === "Paper")
-  ) {
-    result = "You win";
-  } else {
-    result = "Tie";
-  }
-};
-
-const printAnswer = () => {
-  const verdict = document.querySelector(".verdict__container");
-  verdict.append(result);
-};
-
 const newGameButtonDiv = document.querySelector(".new-game-div");
-const NEW_GAME = document.createElement("button");
-NEW_GAME.classList.add("btn", "btn-primary");
+const NEW_GAME = document.createElement("div");
+NEW_GAME.classList.add("new-game-button");
+NEW_GAME.innerText = "New Game";
 newGameButtonDiv.append(NEW_GAME);
 
 // function playRound(playerSelection, computerSelection) {

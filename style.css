@@ -10,7 +10,12 @@ body {
   src: url("fonts/Qdbettercomicsans-jEEeG.ttf") format("truetype");
 }
 
-.main__title, .main__subtext, .player, .computer, .verdict__container {
+.main__title,
+.main__subtext,
+.player,
+.computer,
+.verdict__container,
+.new-game-button {
   font-family: "Comic Sans";
 }
 
@@ -19,6 +24,8 @@ article:hover {
   transition: 0.2s;
 }
 
-.button {
-    background: url(images/scissors.png);
+.new-game-button {
+  border: 1px solid black;
+  padding: 5px 20px;
+  background: url(images/background.jpg);
 }
