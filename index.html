@@ -21,24 +21,27 @@
       <span class="main__subtext fs-4">Pick your answer</span>
       <section class="d-flex align-items-center mt-5 mb-5">
         <article class="d-flex justify-content-center">
-          <button type="submit" class="rock btn btn-default border border-0">
+          <button class="rock btn btn-default border border-0">
             <img src="images/rock.png" class="w-50" />
           </button>
         </article>
         <article class="d-flex justify-content-center">
-          <button type="submit" class="paper btn btn-default border border-0">
+          <button class="paper btn btn-default border border-0">
             <img src="images/paper.png" class="w-50" />
           </button>
         </article>
         <article class="d-flex justify-content-center">
-          <button type="submit" class="scissors btn btn-default border border-0">
+          <button class="scissors btn btn-default border border-0">
             <img src="images/scissors.png" class="w-50" />
           </button>
         </article>
       </section>
-      <section class="answer__container d-flex justify-content-center">
-        <div class="computer">Computer chose:</div>
+      <section class="selection__container d-flex justify-content-center gap-5">
+        <div class="player">Player chose: <span id="player-answer"></span></div>
+        <div class="computer">Computer chose: </div>
       </section>
+      <div class="verdict__container"></div>
+      <div class="new-game-div"></div>
     </main>
     <script type="text/javascript" defer src="script.js"></script>
   </body>

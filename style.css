@@ -10,7 +10,7 @@ body {
   src: url("fonts/Qdbettercomicsans-jEEeG.ttf") format("truetype");
 }
 
-.main__title, .main__subtext, .computer {
+.main__title, .main__subtext, .player, .computer, .verdict__container {
   font-family: "Comic Sans";
 }
 

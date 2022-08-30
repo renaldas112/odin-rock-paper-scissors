@@ -1,18 +1,92 @@
-const rock = document.querySelector(".rock");
-const paper = document.querySelector(".paper");
-const scissors = document.querySelector(".scissors");
+//////////////////////////////////////////////////
+// computer choices
 
-// computer choice
+let computerAnswer = "";
+
 const getComputerChoice = () => {
-  const computerChoice = ["Rock", "Paper", "Scissors"];
+  const computerChoices = ["Rock", "Paper", "Scissors"];
 
-  const random = Math.floor(Math.random() * computerChoice.length);
-  console.log(random, computerChoice[random]);
+  const random = Math.floor(Math.random() * computerChoices.length);
+
+  const computerAnswerText = document.querySelector(".computer");
+  computerAnswerText.append(computerChoices[random]);
+
+  computerAnswer = computerChoices[random];
 };
 
-const computerSelection = getComputerChoice();
+// disables buttons after clicked
+const disableButtonAfterClicked = () => {
+  const BUTTONS = document.getElementsByTagName("button");
+  for (const BUTTON of BUTTONS) {
+    BUTTON.disabled = true;
+  }
+};
 
+//////////////////////////////////////////////////
+// player choice
 
+let playerSelection = "";
+
+const playerAnswer = document.getElementById("player-answer");
+
+const ROCK_BUTTON = (document.querySelector(".rock").onclick = function () {
+  playerAnswer.innerText = "Rock";
+  playerSelection = "Rock";
+  getComputerChoice();
+  gameRules();
+  printAnswer();
+  disableButtonAfterClicked();
+});
+const PAPER_BUTTON = (document.querySelector(".paper").onclick = function () {
+  playerAnswer.innerText = "Paper";
+  playerSelection = "Paper";
+  getComputerChoice();
+  gameRules();
+  printAnswer();
+  disableButtonAfterClicked();
+});
+const SCISSORS_BUTTON = (document.querySelector(".scissors").onclick =
+  function () {
+    playerAnswer.innerText = "Scissors";
+    playerSelection = "Scissors";
+    getComputerChoice();
+    gameRules();
+    printAnswer();
+    disableButtonAfterClicked();
+  });
+
+/////////////////////////////////////////////////////
+// game rules
+
+let result = "";
+
+const gameRules = () => {
+  if (
+    (playerSelection === "Rock" && computerAnswer === "Paper") ||
+    (playerSelection === "Paper" && computerAnswer === "Scissors") ||
+    (playerSelection === "Scissors" && computerAnswer === "Rock")
+  ) {
+    result = "You lost";
+  } else if (
+    (playerSelection === "Rock" && computerAnswer === "Scissors") ||
+    (playerSelection === "Paper" && computerAnswer === "Rock") ||
+    (playerSelection === "Scissors" && computerAnswer === "Paper")
+  ) {
+    result = "You win";
+  } else {
+    result = "Tie";
+  }
+};
+
+const printAnswer = () => {
+  const verdict = document.querySelector(".verdict__container");
+  verdict.append(result);
+};
+
+const newGameButtonDiv = document.querySelector(".new-game-div");
+const NEW_GAME = document.createElement("button");
+NEW_GAME.classList.add("btn", "btn-primary");
+newGameButtonDiv.append(NEW_GAME);
 
 // function playRound(playerSelection, computerSelection) {
 //   // your code here!
