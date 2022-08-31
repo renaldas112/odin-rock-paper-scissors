@@ -10,23 +10,43 @@ body {
   src: url("fonts/Qdbettercomicsans-jEEeG.ttf") format("truetype");
 }
 
+main {
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 .main__title,
 .start-game,
 .main__subtext,
 .player,
+.player__scoreboard,
+.player-score,
 .computer,
+.computer__scoreboard,
+.computer-score,
 .answer__container,
-.new-game-button {
+.next-round-button {
   font-family: "Comic Sans";
 }
 
-article:hover, .new-game-button:hover, .start-game:hover {
+article:hover,
+.next-round-button:hover,
+.start-game:hover {
   transform: scale(1.1);
   transition: 0.2s;
 }
 
-.new-game-button, .start-game {
+.next-round-button,
+.start-game {
   border: 1px solid black;
   padding: 5px 20px;
   background: url(images/background.jpg);
+}
+
+.scoreboard__container {
+  gap: 50vw;
 }

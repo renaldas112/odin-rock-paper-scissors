@@ -15,12 +15,24 @@
   </head>
   <body>
     <main
-      class="d-flex flex-column min-vh-100 align-items-center justify-content-center"
+      class="main__container d-flex flex-column align-items-center justify-content-center"
     >
+      <div class="scoreboard__container d-flex d-none">
+        <aside class="d-flex player__scoreboard fs-4 me-5">
+          Player:
+          <div class="player-score ms-2"></div>
+        </aside>
+        <aside class="d-flex computer__scoreboard fs-4 ms-5">
+          Computer:
+          <div class="computer-score ms-2"></div>
+        </aside>
+      </div>
       <h1 class="main__title">Rock, Paper, Scissors</h1>
       <div type="button" class="btn start-game">Start Game</div>
       <span class="main__subtext fs-4 d-none">Pick your answer</span>
-      <section class="main__container d-flex align-items-center mt-5 mb-5 d-none">
+      <section
+        class="main__section d-flex align-items-center mt-5 mb-5 d-none"
+      >
         <article class="d-flex justify-content-center">
           <button class="rock btn btn-default border border-0">
             <img src="images/rock.png" class="w-50" />
@@ -38,12 +50,22 @@
         </article>
       </section>
       <section class="selection__container d-flex justify-content-center gap-5">
-        <div class="player d-none">Player chose: <span id="player-answer"></span></div>
-        <div class="computer d-none">Computer chose: <span id="computer-answer"></span></div>
+        <div class="player fs-5 d-none">
+          Player chose: <span id="player-answer" class="fs-5"></span>
+        </div>
+        <div class="computer fs-5 d-none">
+          Computer chose: <span id="computer-answer" class="fs-5"></span>
+        </div>
       </section>
-      <div class="answer__container"><span id="score-answer"></span></div>
-      <div type="button" class="new-game-div d-none"></div>
+      <div class="answer__container">
+        <span id="game-answer" class="fs-5"></span>
+      </div>
+      <div type="button" class="next-round-div d-none"></div>
     </main>
+    <div class="game__over-container">
+      <div class="game__over-container--victory"></div>
+      <div class="game__over-container--defeat"></div>
+    </div>
     <script type="text/javascript" defer src="script.js"></script>
     <script type="text/javascript" defer src="game-rules.js"></script>
     <script type="text/javascript" defer src="player-choice.js"></script>

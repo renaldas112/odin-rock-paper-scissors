@@ -12,6 +12,7 @@ const ROCK_BUTTON = (document.querySelector(".rock").onclick = function () {
   gameRules();
   printAnswer();
   newGameButtonUnhide();
+  gameOver();
   disableButtonAfterClicked();
 });
 const PAPER_BUTTON = (document.querySelector(".paper").onclick = function () {
@@ -21,6 +22,7 @@ const PAPER_BUTTON = (document.querySelector(".paper").onclick = function () {
   gameRules();
   printAnswer();
   newGameButtonUnhide();
+  gameOver();
   disableButtonAfterClicked();
 });
 const SCISSORS_BUTTON = (document.querySelector(".scissors").onclick =
@@ -31,6 +33,7 @@ const SCISSORS_BUTTON = (document.querySelector(".scissors").onclick =
     gameRules();
     printAnswer();
     newGameButtonUnhide();
+    gameOver();
     disableButtonAfterClicked();
   });
 
@@ -38,3 +41,4 @@ const SCISSORS_BUTTON = (document.querySelector(".scissors").onclick =
     const playerAnswer = document.getElementById("player-answer");
     playerAnswer.innerText = "";
   }
+  

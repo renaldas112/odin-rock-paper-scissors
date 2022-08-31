@@ -1,38 +1,43 @@
 // start game
-const startNewGame = (document.querySelector(".start-game").onclick = function () {
-  const mainSubText = document.querySelector(".main__subtext");
-  mainSubText.classList.remove("d-none");
-  const mainContainer = document.querySelector(".main__container");
-  mainContainer.classList.remove("d-none");
-  const playerContainer = document.querySelector(".player");
-  playerContainer.classList.remove("d-none");
-  const computerContainer = document.querySelector(".computer");
-  computerContainer.classList.remove("d-none");
-  START_BUTTON = document.querySelector(".start-game");
-  START_BUTTON.classList.add("d-none");
-});
+const startNewGame = (document.querySelector(".start-game").onclick =
+  function () {
+    const mainContainer = document.querySelector(".main__container");
+    mainContainer.classList.remove("justify-content-center");
+    const mainSection = document.querySelector(".main__section");
+    mainSection.classList.remove("d-none");
+    const scoreboardContainer = document.querySelector(".scoreboard__container");
+    scoreboardContainer.classList.remove("d-none");
+    const mainSubText = document.querySelector(".main__subtext");
+    mainSubText.classList.remove("d-none");
+    const playerContainer = document.querySelector(".player");
+    playerContainer.classList.remove("d-none");
+    const computerContainer = document.querySelector(".computer");
+    computerContainer.classList.remove("d-none");
+    START_BUTTON = document.querySelector(".start-game");
+    START_BUTTON.classList.add("d-none");
+  });
 
-//new game button
+//next round button
 
-const newGameButtonDiv = document.querySelector(".new-game-div");
-const NEW_GAME = document.createElement("div");
-NEW_GAME.classList.add("new-game-button");
-NEW_GAME.innerText = "New Game";
-newGameButtonDiv.append(NEW_GAME);
+const nextRoundButtonDiv = document.querySelector(".next-round-div");
+const NEXT_ROUND = document.createElement("div");
+NEXT_ROUND.classList.add("next-round-button");
+NEXT_ROUND.innerText = "Next Round";
+nextRoundButtonDiv.append(NEXT_ROUND);
 
-//new game button hidden in start menu (default)
+//next round button hidden in start menu (default)
 
 const newGameButtonUnhide = () => {
-  newGameButtonDiv.classList.remove("d-none");
-}
+  nextRoundButtonDiv.classList.remove("d-none");
+};
 
-//new game button hides after new round starts
+//next round button hides after new round starts
 
 const newGameButtonHide = () => {
-  newGameButtonDiv.classList.add("d-none");
-}
+  nextRoundButtonDiv.classList.add("d-none");
+};
 
-// disables buttons after clicked
+// disables buttons after one choice selected
 
 const disableButtonAfterClicked = () => {
   const BUTTONS = document.getElementsByTagName("button");
@@ -41,7 +46,7 @@ const disableButtonAfterClicked = () => {
   }
 };
 
-//new game button enables rock paper scissors buttons
+//next round button enables rock paper scissors buttons
 
 const enableButtonAfterClicked = () => {
   const BUTTONS = document.getElementsByTagName("button");
@@ -50,9 +55,9 @@ const enableButtonAfterClicked = () => {
   }
 };
 
-//new game button functions
+//next round button functions
 
-NEW_GAME.onclick = function () {
+NEXT_ROUND.onclick = function () {
   enableButtonAfterClicked();
   resetPlayerAnswer();
   resetComputerChoice();
@@ -60,14 +65,14 @@ NEW_GAME.onclick = function () {
   newGameButtonHide();
 };
 
-//score
+//is it tie or win/lose
+
+const gameText = document.getElementById("game-answer");
 
 const printAnswer = () => {
-  const scoreText = document.getElementById("score-answer");
-  scoreText.innerText = result;
+  gameText.innerText = result;
 };
 
 const resetAnswer = () => {
-  const scoreText = document.getElementById("score-answer");
-  scoreText.innerText = "";
-}
+  gameText.innerText = "";
+};
