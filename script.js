@@ -1,4 +1,7 @@
 // start game
+
+const main = document.getElementById("main");
+
 const startNewGame = (document.querySelector(".start-game").onclick =
   function () {
     const mainContainer = document.querySelector(".main__container");
@@ -21,7 +24,7 @@ const startNewGame = (document.querySelector(".start-game").onclick =
 
 const nextRoundButtonDiv = document.querySelector(".next-round-div");
 const NEXT_ROUND = document.createElement("div");
-NEXT_ROUND.classList.add("next-round-button");
+NEXT_ROUND.classList.add("next-round-button", "background-img");
 NEXT_ROUND.innerText = "Next Round";
 nextRoundButtonDiv.append(NEXT_ROUND);
 

@@ -1,7 +1,6 @@
 /* only for custom styles */
 
 body {
-  background: url(images/background.jpg);
   margin: 0;
 }
 
@@ -10,7 +9,15 @@ body {
   src: url("fonts/Qdbettercomicsans-jEEeG.ttf") format("truetype");
 }
 
-main {
+.background-img {
+  background: url(images/background.jpg);
+}
+
+#main {
+  height: 100vh;
+}
+
+.main__container {
   height: 500px;
   position: absolute;
   top: 50%;
@@ -19,17 +26,7 @@ main {
   transform: translate(-50%, -50%);
 }
 
-.main__title,
-.start-game,
-.main__subtext,
-.player,
-.player__scoreboard,
-.player-score,
-.computer,
-.computer__scoreboard,
-.computer-score,
-.answer__container,
-.next-round-button {
+* {
   font-family: "Comic Sans";
 }
 
@@ -44,9 +41,49 @@ article:hover,
 .start-game {
   border: 1px solid black;
   padding: 5px 20px;
-  background: url(images/background.jpg);
 }
 
 .scoreboard__container {
   gap: 50vw;
+}
+
+.victory-screen__container,
+.defeat-screen__container {
+  top: 25%;
+  left: 25%;
+  height: 30%;
+}
+
+.blur-effect {
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+.bounce-in {
+  animation: bounce-in 1s ease;
+}
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% { transform: scale(.9); }
+  100% { transform: scale(1); }
+}
+
+.play-again-button {
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fade-in 0.5s linear;
+  animation-delay: 2s;
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

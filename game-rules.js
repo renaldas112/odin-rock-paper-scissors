@@ -17,7 +17,7 @@ const gameRules = () => {
     (playerSelection === "Paper" && computerAnswer === "Scissors") ||
     (playerSelection === "Scissors" && computerAnswer === "Rock")
   ) {
-    result = "You lost";
+    result = "Round Lost";
 
     computerScore++;
 
@@ -28,7 +28,7 @@ const gameRules = () => {
     (playerSelection === "Paper" && computerAnswer === "Rock") ||
     (playerSelection === "Scissors" && computerAnswer === "Paper")
   ) {
-    result = "You win";
+    result = "Round Won";
 
     playerScore++;
 
@@ -40,9 +40,10 @@ const gameRules = () => {
 };
 
 const gameOver = () => {
-  if (playerScore === 5) {
-    return console.log("you won");
-  } else if (computerScore === 5) {
-    return console.log("you lost");
+  if (playerScore === 1) {
+    displayVictoryScreen(playerScore, computerScore);
+  } else if (computerScore === 1) {
+    displayDefeatScreen(playerScore, computerScore);
   }
 };
+
