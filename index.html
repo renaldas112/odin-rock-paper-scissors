@@ -18,8 +18,9 @@
       class="d-flex flex-column min-vh-100 align-items-center justify-content-center"
     >
       <h1 class="main__title">Rock, Paper, Scissors</h1>
-      <span class="main__subtext fs-4">Pick your answer</span>
-      <section class="d-flex align-items-center mt-5 mb-5">
+      <div type="button" class="btn start-game">Start Game</div>
+      <span class="main__subtext fs-4 d-none">Pick your answer</span>
+      <section class="main__container d-flex align-items-center mt-5 mb-5 d-none">
         <article class="d-flex justify-content-center">
           <button class="rock btn btn-default border border-0">
             <img src="images/rock.png" class="w-50" />
@@ -37,12 +38,15 @@
         </article>
       </section>
       <section class="selection__container d-flex justify-content-center gap-5">
-        <div class="player">Player chose: <span id="player-answer"></span></div>
-        <div class="computer">Computer chose: </div>
+        <div class="player d-none">Player chose: <span id="player-answer"></span></div>
+        <div class="computer d-none">Computer chose: <span id="computer-answer"></span></div>
       </section>
-      <div class="verdict__container"></div>
-      <div class="new-game-div"></div>
+      <div class="answer__container"><span id="score-answer"></span></div>
+      <div type="button" class="new-game-div d-none"></div>
     </main>
     <script type="text/javascript" defer src="script.js"></script>
+    <script type="text/javascript" defer src="game-rules.js"></script>
+    <script type="text/javascript" defer src="player-choice.js"></script>
+    <script type="text/javascript" defer src="computer-choice.js"></script>
   </body>
 </html>

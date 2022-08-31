@@ -1,87 +1,18 @@
-//////////////////////////////////////////////////
-// computer choices
-
-let computerAnswer = "";
-
-const getComputerChoice = () => {
-  const computerChoices = ["Rock", "Paper", "Scissors"];
-
-  const random = Math.floor(Math.random() * computerChoices.length);
-
-  const computerAnswerText = document.querySelector(".computer");
-  computerAnswerText.append(computerChoices[random]);
-
-  computerAnswer = computerChoices[random];
-};
-
-// disables buttons after clicked
-const disableButtonAfterClicked = () => {
-  const BUTTONS = document.getElementsByTagName("button");
-  for (const BUTTON of BUTTONS) {
-    BUTTON.disabled = true;
-  }
-};
-
-/////////////////////////////////////////////////////
-// game rules
-
-let result = "";
-
-const gameRules = () => {
-  if (
-    (playerSelection === "Rock" && computerAnswer === "Paper") ||
-    (playerSelection === "Paper" && computerAnswer === "Scissors") ||
-    (playerSelection === "Scissors" && computerAnswer === "Rock")
-  ) {
-    result = "You lost";
-  } else if (
-    (playerSelection === "Rock" && computerAnswer === "Scissors") ||
-    (playerSelection === "Paper" && computerAnswer === "Rock") ||
-    (playerSelection === "Scissors" && computerAnswer === "Paper")
-  ) {
-    result = "You win";
-  } else {
-    result = "Tie";
-  }
-};
-
-const printAnswer = () => {
-  const verdict = document.querySelector(".verdict__container");
-  verdict.append(result);
-};
-
-//////////////////////////////////////////////////
-// player choice
-
-let playerSelection = "";
-
-const playerAnswer = document.getElementById("player-answer");
-
-const ROCK_BUTTON = (document.querySelector(".rock").onclick = function () {
-  playerAnswer.innerText = "Rock";
-  playerSelection = "Rock";
-  getComputerChoice();
-  gameRules();
-  printAnswer();
-  disableButtonAfterClicked();
+// start game
+const startNewGame = (document.querySelector(".start-game").onclick = function () {
+  const mainSubText = document.querySelector(".main__subtext");
+  mainSubText.classList.remove("d-none");
+  const mainContainer = document.querySelector(".main__container");
+  mainContainer.classList.remove("d-none");
+  const playerContainer = document.querySelector(".player");
+  playerContainer.classList.remove("d-none");
+  const computerContainer = document.querySelector(".computer");
+  computerContainer.classList.remove("d-none");
+  START_BUTTON = document.querySelector(".start-game");
+  START_BUTTON.classList.add("d-none");
 });
-const PAPER_BUTTON = (document.querySelector(".paper").onclick = function () {
-  playerAnswer.innerText = "Paper";
-  playerSelection = "Paper";
-  getComputerChoice();
-  gameRules();
-  printAnswer();
-  disableButtonAfterClicked();
-});
-const SCISSORS_BUTTON = (document.querySelector(".scissors").onclick =
-  function () {
-    playerAnswer.innerText = "Scissors";
-    playerSelection = "Scissors";
-    getComputerChoice();
-    gameRules();
-    printAnswer();
-    disableButtonAfterClicked();
-  });
+
+//new game button
 
 const newGameButtonDiv = document.querySelector(".new-game-div");
 const NEW_GAME = document.createElement("div");
@@ -89,7 +20,54 @@ NEW_GAME.classList.add("new-game-button");
 NEW_GAME.innerText = "New Game";
 newGameButtonDiv.append(NEW_GAME);
 
-// function playRound(playerSelection, computerSelection) {
-//   // your code here!
-// }
-// console.log(playRound(playerSelection, computerSelection));
+//new game button hidden in start menu (default)
+
+const newGameButtonUnhide = () => {
+  newGameButtonDiv.classList.remove("d-none");
+}
+
+//new game button hides after new round starts
+
+const newGameButtonHide = () => {
+  newGameButtonDiv.classList.add("d-none");
+}
+
+// disables buttons after clicked
+
+const disableButtonAfterClicked = () => {
+  const BUTTONS = document.getElementsByTagName("button");
+  for (const BUTTON of BUTTONS) {
+    BUTTON.disabled = true;
+  }
+};
+
+//new game button enables rock paper scissors buttons
+
+const enableButtonAfterClicked = () => {
+  const BUTTONS = document.getElementsByTagName("button");
+  for (const BUTTON of BUTTONS) {
+    BUTTON.disabled = false;
+  }
+};
+
+//new game button functions
+
+NEW_GAME.onclick = function () {
+  enableButtonAfterClicked();
+  resetPlayerAnswer();
+  resetComputerChoice();
+  resetAnswer();
+  newGameButtonHide();
+};
+
+//score
+
+const printAnswer = () => {
+  const scoreText = document.getElementById("score-answer");
+  scoreText.innerText = result;
+};
+
+const resetAnswer = () => {
+  const scoreText = document.getElementById("score-answer");
+  scoreText.innerText = "";
+}

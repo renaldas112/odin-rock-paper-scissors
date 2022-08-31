@@ -11,20 +11,21 @@ body {
 }
 
 .main__title,
+.start-game,
 .main__subtext,
 .player,
 .computer,
-.verdict__container,
+.answer__container,
 .new-game-button {
   font-family: "Comic Sans";
 }
 
-article:hover {
+article:hover, .new-game-button:hover, .start-game:hover {
   transform: scale(1.1);
   transition: 0.2s;
 }
 
-.new-game-button {
+.new-game-button, .start-game {
   border: 1px solid black;
   padding: 5px 20px;
   background: url(images/background.jpg);
