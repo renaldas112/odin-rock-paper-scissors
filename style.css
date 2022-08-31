@@ -74,16 +74,3 @@ article:hover,
   70% { transform: scale(.9); }
   100% { transform: scale(1); }
 }
-
-.play-again-button {
-  opacity: 0;
-}
-
-.fade-in {
-  animation: fade-in 0.5s linear;
-  animation-delay: 2s;
-}
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
