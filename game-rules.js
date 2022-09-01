@@ -40,6 +40,7 @@ const gameRules = () => {
 
 const gameOverScreen = document.querySelector(".game__over-container");
 
+
 const gameOver = () => {
   if (playerScore === 5) {
     displayVictoryScreen(playerScore, computerScore);
