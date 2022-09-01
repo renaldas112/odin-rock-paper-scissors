@@ -13,6 +13,8 @@ Start screen <br/>
 Scoreboard <br/>
 Clickable icons <br/>
 Option to play again <br/>
+<br/>
+Created using JavaScript, HTML5, CSS (for custom styling) and Bootstrap for main styling
 
 MIT © [Renaldas112]()
 
