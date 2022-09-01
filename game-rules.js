@@ -1,4 +1,3 @@
-/////////////////////////////////////////////////////
 // game rules
 
 let result = "";
@@ -39,11 +38,14 @@ const gameRules = () => {
   }
 };
 
+const gameOverScreen = document.querySelector(".game__over-container");
+
 const gameOver = () => {
-  if (playerScore === 1) {
+  if (playerScore === 5) {
     displayVictoryScreen(playerScore, computerScore);
-  } else if (computerScore === 1) {
+    main.classList.toggle("blur-effect");
+  } else if (computerScore === 5) {
     displayDefeatScreen(playerScore, computerScore);
+    main.classList.toggle("blur-effect");
   }
 };
-

@@ -1,4 +1,3 @@
-//////////////////////////////////////////////////
 // player choice
 
 let playerSelection = "";
@@ -37,8 +36,7 @@ const SCISSORS_BUTTON = (document.querySelector(".scissors").onclick =
     disableButtonAfterClicked();
   });
 
-  const resetPlayerAnswer = () => {
-    const playerAnswer = document.getElementById("player-answer");
-    playerAnswer.innerText = "";
-  }
-  
+const resetPlayerAnswer = () => {
+  const playerAnswer = document.getElementById("player-answer");
+  playerAnswer.innerText = "";
+};

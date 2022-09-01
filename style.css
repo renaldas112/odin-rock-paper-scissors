@@ -32,13 +32,15 @@ body {
 
 article:hover,
 .next-round-button:hover,
-.start-game:hover {
+.start-game:hover,
+.play-again-button:hover {
   transform: scale(1.1);
   transition: 0.2s;
 }
 
 .next-round-button,
-.start-game {
+.start-game,
+.play-again-button {
   border: 1px solid black;
   padding: 5px 20px;
 }
@@ -54,6 +56,11 @@ article:hover,
   height: 30%;
 }
 
+.play-again-button {
+  width: 125px;
+  margin: 25px auto 0 auto;
+}
+
 .blur-effect {
   filter: blur(8px);
   -webkit-filter: blur(8px);
@@ -65,12 +72,16 @@ article:hover,
 @keyframes bounce-in {
   0% {
     opacity: 0;
-    transform: scale(.3);
+    transform: scale(0.3);
   }
   50% {
     opacity: 1;
     transform: scale(1.05);
   }
-  70% { transform: scale(.9); }
-  100% { transform: scale(1); }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
