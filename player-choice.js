@@ -14,6 +14,7 @@ const ROCK_BUTTON = (document.querySelector(".rock").onclick = function () {
   gameOver();
   disableButtonAfterClicked();
 });
+
 const PAPER_BUTTON = (document.querySelector(".paper").onclick = function () {
   playerAnswer.innerText = "Paper";
   playerSelection = "Paper";
@@ -24,6 +25,7 @@ const PAPER_BUTTON = (document.querySelector(".paper").onclick = function () {
   gameOver();
   disableButtonAfterClicked();
 });
+
 const SCISSORS_BUTTON = (document.querySelector(".scissors").onclick =
   function () {
     playerAnswer.innerText = "Scissors";
