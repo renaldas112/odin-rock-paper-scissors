@@ -3,7 +3,7 @@ JavaScript Foundations | "Project: Rock Paper Scissors" from "theodinproject.com
 
 ## Rock Paper Scissors
 <div align="center">
-  <img src ="images/screenshot.png" style="width: 500px" />
+  <img src ="images/screenshot.PNG" style="width: 500px" />
 </div>
 
 ## Rock Paper Scissors game
