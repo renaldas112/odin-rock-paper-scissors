@@ -8,9 +8,7 @@ const startNewGame = (document.querySelector(".start-game").onclick =
     mainContainer.classList.remove("justify-content-center");
     const mainSection = document.querySelector(".main__section");
     mainSection.classList.remove("d-none");
-    const scoreboardContainer = document.querySelector(
-      ".scoreboard__container"
-    );
+    const scoreboardContainer = document.querySelector(".scoreboard__container");
     scoreboardContainer.classList.remove("d-none");
     const mainSubText = document.querySelector(".main__subtext");
     mainSubText.classList.remove("d-none");
