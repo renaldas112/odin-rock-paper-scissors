@@ -7,7 +7,7 @@ JavaScript Foundations | "Project: Rock Paper Scissors" from "theodinproject.com
 </div>
 
 ## Rock Paper Scissors game
-A rock paper scissors game against computer, first to 5 wins. 
+A rock paper scissors game against computer, first to 5 wins. <br/>
 Includes: <br/>
 Start screen <br/>
 Scoreboard <br/>
