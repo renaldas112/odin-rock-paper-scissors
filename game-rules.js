@@ -40,6 +40,17 @@ const gameRules = () => {
 
 const gameOverScreen = document.querySelector(".game__over-container");
 
+//is it tie or win/lose
+
+const gameText = document.getElementById("game-answer");
+
+const printAnswer = () => {
+  gameText.innerText = result;
+};
+
+const resetAnswer = () => {
+  gameText.innerText = "";
+};
 
 const gameOver = () => {
   if (playerScore === 5) {
